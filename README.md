@@ -17,7 +17,7 @@ Testé avec L'anémomètre / girouette *Oregon Scientific WGR800* ![WGR800](http
 1. Uploader le fichier *wind_direction.php* sur la box ([Doc eedomus scripts](http://doc.eedomus.com/view/Scripts#Script_HTTP_sur_la_box_eedomus))
 
 ## Tester
-Ce script peut ensuite être testé au travers du lien suivant dans le naviguateur
+Ce script peut ensuite être testé au travers du lien suivant dans le navigateur
 
 	http://[ip_de_votre_box]/script/?exec=wind_direction.php&periph=[code_api_perif]
 
@@ -32,7 +32,7 @@ Exemple
 ## Résultat
 Le résultat est au format XML.
 
-Exemple de résulat
+Exemple de résultat
 ```xml
 <data>
 	<change>2015-Nov-20 14:07:43</change>
@@ -51,7 +51,7 @@ Exemple de résulat
 
 ## Correspondance XPATH
 
-Les diférentes informations possibles retournées par les Xpath suivants :
+Les différentes informations possibles retournées par les Xpath suivants :
 
 - ```/data/change``` : La date et l'heure de la dernière actualisation du capteur de direction du vent
 - ```/data/degree``` : Orientation du vent mesuré en degré (°)
