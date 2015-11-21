@@ -12,6 +12,8 @@ Il permet de convertir une direction de vent en degré vers son équivalent en p
 
 Testé avec L'anémomètre / girouette *Oregon Scientific WGR800* ![WGR800](https://secure.eedomus.com/img/mdm/periph/WGR800.png "Oregon Scientific WGR800")
 
+![rosevents](rosevents.gif "Rose des vents")
+
 ## Installation
 1. Télécharger le projet sur GitHub : [github.com/Nikya/eedomusScript_windDirection](https://github.com/Nikya/eedomusScript_windDirection/archive/master.zip)
 1. Uploader le fichier *wind_direction.php* sur la box ([Doc eedomus scripts](http://doc.eedomus.com/view/Scripts#Script_HTTP_sur_la_box_eedomus))
