@@ -10,7 +10,8 @@ Auteur : Nikya
 
 Il permet de convertir une direction de vent en degré vers son équivalent en point cardinal.
 
-Testé avec L'anémomètre / girouette *Oregon Scientific WGR800* ![WGR800](https://secure.eedomus.com/img/mdm/periph/WGR800.png "Oregon Scientific WGR800")
+Testé avec L'anémomètre / girouette *Oregon Scientific WGR800* ![WGR800](https://secure.eedomus.com/img/mdm/periph/WGR800.png "Oregon Scientific WGR800").
+Le bon fonctionnement de ce script dépend d'une installation correte de la girouette : Orienté correctement vers le Nord.
 
 ![rosevents](rosevents.gif "Rose des vents")
 
