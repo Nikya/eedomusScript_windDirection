@@ -1,0 +1,57 @@
+{
+    "plugin_id": "wind_direction",
+    "name_fr": "Wind direction",
+    "icon": "windrose-compass.png",
+    "version": "2.0",
+    "creation_date": "2015-11-20",
+    "modification_date": "2017-10-08",
+    "author": "<a href=\"https://github.com/Nikya\">Nikya</a>",
+    "description_fr": "Convertir une direction de vent en degré, vers son équivalent en point cardinal.",
+    "description_en": "convert a wind direction in degrees, to its cardinal point equivalent.",
+    "forum_link": "http://forum.eedomus.com/viewtopic.php?f=50&t=3330",
+    "parameters": [
+        {
+            "parameter": "help_url",
+            "description": "Documentation technique ou pour signaler un beugue",
+            "xtype": "displayfield",
+            "field": "style: 'padding: 3px;', value: 'https://github.com/Nikya/eedomusScript_windDirection'"
+        },
+        {
+            "parameter": "configPerifCode",
+            "description": "Renseigner le code API de l'anémomètre",
+            "xtype": "numberfield",
+            "field": "allowBlank: false, allowDecimals:false, width: 100"
+        },
+        {
+            "parameter": "configDisplay",
+            "description": "<b>Options d'affichages</b> Choisir une langue et une longueur d'affichage parmis : <code>fr/short</code> ou <code>fr/long</code> ou <code>en/short</code> ou <code>en/long</code>",
+            "xtype": "textfield",
+            "field": "allowBlank: false, allowDecimals:false, width: 10"
+        }
+    ],
+    "scripts": [
+        {
+            "name": "wind_direction.php"
+        }
+    ],
+    "devices": [
+        {
+            "device_id": "wind_direction",
+            "module_id": "51",
+            "type": "http",
+            "name_fr": "Wind direction",
+            "icon": "windrose-compass.png",
+            "utilisation_id": "35",
+            "parameters": {
+                "value_type": "list",
+                "ignore_errors": 3,
+                "VAR1": "localhost",
+                "VAR2": "plugin.parameters.configPerifCode",
+                "VAR3": "plugin.parameters.configDisplay",
+                "RAW_URL": "http://[VAR1]/script/?exec=wind_direction.php&periph=[VAR2]",
+                "RAW_XPATH": "/data/[VAR3]",
+                "POLLING": "5"
+            }
+        }
+    ]
+}

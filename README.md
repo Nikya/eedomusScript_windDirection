@@ -1,8 +1,11 @@
 # eedomus script : wind direction
 
-Version : 1.0
+![compass](eedomus_plugin\img\windrose-compass.png "Rose des vents")
 
-Auteur : Nikya
+* Version : 2.0
+* Origine : [GitHub/Nikya/windDirection][be61b901]
+
+  [be61b901]: https://github.com/Nikya/eedomusScript_windDirection "Origine sur GitHub"
 
 
 ## Description
@@ -16,11 +19,15 @@ Le bon fonctionnement de ce script dépend d'une installation correte de la giro
 
 ![rosevents](rosevents.gif "Rose des vents")
 
-## Installation
-1. Télécharger le projet sur GitHub : [github.com/Nikya/eedomusScript_windDirection](https://github.com/Nikya/eedomusScript_windDirection/archive/master.zip)
-1. Uploader le fichier *wind_direction.php* sur la box ([Doc eedomus scripts](http://doc.eedomus.com/view/Scripts#Script_HTTP_sur_la_box_eedomus))
+## Installation via store
 
-## Tester
+Depuis le portail eedomus, cliquez sur `Configuration / Ajouter ou supprimer un périphérique / Store eedomus` puis selectioner _windDirection_.
+
+## Installation manuel
+1. Télécharger le projet sur GitHub : [github.com/Nikya/eedomusScript_windDirection](https://github.com/Nikya/eedomusScript_windDirection/archive/master.zip)
+1. Uploader le fichier *src/wind_direction.php* sur la box ([Doc eedomus scripts](http://doc.eedomus.com/view/Scripts#Script_HTTP_sur_la_box_eedomus))
+
+### Tester
 Ce script peut ensuite être testé au travers du lien suivant dans le navigateur
 
 	http://[ip_de_votre_box]/script/?exec=wind_direction.php&periph=[code_api_perif]
@@ -33,7 +40,7 @@ Exemple
 
 	http://192.168.1.2/script/?exec=wind_direction.php&periph=999999
 
-## Résultat
+### Résultat
 Le résultat est au format XML.
 
 Exemple de résultat
@@ -53,7 +60,7 @@ Exemple de résultat
 </data>
 ```
 
-## Correspondance XPATH
+### Correspondance XPATH
 
 Les différentes informations possibles retournées par les Xpath suivants :
 
@@ -73,8 +80,9 @@ Renseigner les paramètres suivants :
 
 - Type de données : ```Texte```
 - URL de la requête : ```http://[VAR1]/script/?exec=wind_direction.php&periph=[VAR2]```
-- Chemin XPATH : ```/data/fr/long```
+- Chemin XPATH : ```/data/[VAR3]```
 - Fréquence de la requête : ```5```
 - Variables utilisateur :
 	- [VAR1] : ```Localhost```
 	- [VAR2] : ```999999``` Le code API du périphérique
+	- [VAR3] : ```xx/yyyyy``` Langue et longueur d'affichage `fr` ou `en` et `short` ou `long`

@@ -4,13 +4,13 @@
 * Un script pour la box domotique eedomus pour convertir la direction du vent
 ********************************************************************************
 * Version :
-*	1.0
+*	2.0
 *
 * Auteur :
 *	Nikya
 *	https://github.com/Nikya/
 *
-* Documentation complète :
+* Documentation complète et aide :
 * 	https://github.com/Nikya/eedomusScript_windDirection
 *
 * Param :
@@ -25,7 +25,8 @@
 //require_once ("../eedomusScriptsEmulator.php");
 
 ////////////////////////////////////////////////////////////////////////////////
-// Definition des points cardianux
+// Definition des 16x2 points cardinaux
+// En version courte/longue Français/Anglais
 $cardinalArray = array(
 	'fr' => array(
 		'short' => array(
@@ -174,13 +175,13 @@ $cardinalArray = array(
 $periphId = getArg('periph', true);
 
 ////////////////////////////////////////////////////////////////////////////////
-// Lecture de la valeur
+// Lecture de la valeur en ° du capteur
 $aVal = getValue($periphId);
 $value = $aVal['value'];
 $change = $aVal['change'];
 
 ////////////////////////////////////////////////////////////////////////////////
-// Recherche de la division
+// Recherche de la division correspondante
 $step = 360/32;
 $divId = 0;
 
@@ -191,18 +192,19 @@ for ($d=0; $d<=360; $d+=$step) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Conversion de la division en point cardinaux
+// Recherche du point cardinal correspondant à la division trouvée
+// dans un tableau de type [langue][longeur][val_precision_0][val_precision_1][val_precision_2]
 $cardinal_fr_s = $cardinalArray['fr']['short'][$divId][0].$cardinalArray['fr']['short'][$divId][1].$cardinalArray['fr']['short'][$divId][2];
 $cardinal_fr_l = $cardinalArray['fr']['long'][$divId][0].$cardinalArray['fr']['long'][$divId][1].$cardinalArray['fr']['long'][$divId][2];
 $cardinal_en_s = $cardinalArray['en']['short'][$divId][0].$cardinalArray['en']['short'][$divId][1].$cardinalArray['en']['short'][$divId][2];
 $cardinal_en_l = $cardinalArray['en']['long'][$divId][0].$cardinalArray['en']['long'][$divId][1].$cardinalArray['en']['long'][$divId][2];
 
 ////////////////////////////////////////////////////////////////////////////////
-// Renvoie du resultat en XML
+// Formatage et renvoie du resultat en XML
 $content_type = 'text/xml';
 sdk_header($content_type);
 
-echo <<<EOD
+echo <<<OUT_XML
 	<data>
 		<change>$change</change>
 		<degree>$value</degree>
@@ -216,5 +218,5 @@ echo <<<EOD
 			<long>$cardinal_en_l</long>
 		</en>
 	</data>
-EOD;
+OUT_XML;
 ?>
