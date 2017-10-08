@@ -1,6 +1,6 @@
 # eedomus script : wind direction
 
-![compass](eedomus_plugin\img\windrose-compass.png "Rose des vents")
+![compass](src\img\windrose-compass.png "Rose des vents")
 
 * Version : 2.0
 * Origine : [GitHub/Nikya/windDirection][be61b901]
