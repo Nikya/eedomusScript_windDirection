@@ -1,32 +1,34 @@
 {
     "plugin_id": "wind_direction",
-    "name_fr": "Wind direction",
+    "name_fr": "Direction du vent",
+    "name_en": "Wind direction",
     "icon": "windrose-compass.png",
-    "version": "2.0",
+    "version": "2.1",
     "creation_date": "2015-11-20",
     "modification_date": "2017-10-08",
-    "author": "<a href=\"https://github.com/Nikya\">Nikya</a>",
-    "description_fr": "Convertir une direction de vent en degré, vers son équivalent en point cardinal.",
+    "author": "<a href='https://github.com/Nikya' target='_blank'>Nikya</a>",
+    "description_fr": "Convertir une direction de vent en degré, vers son équivalent en point cardinal (<a target='_blank' href='https://github.com/Nikya/eedomusScript_windDirection'>Documentation</a>)",
     "description_en": "convert a wind direction in degrees, to its cardinal point equivalent.",
     "forum_link": "http://forum.eedomus.com/viewtopic.php?f=50&t=3330",
     "parameters": [
         {
             "parameter": "help_url",
-            "description": "Documentation technique ou pour signaler un beugue",
+            "description": "Documentation technique ou pour signaler un bug",
             "xtype": "displayfield",
-            "field": "style: 'padding: 3px;', value: 'https://github.com/Nikya/eedomusScript_windDirection'"
+            "field": "style: 'padding: 3px;', value: '<a target=\\'_blank\\' href=\\'https://github.com/Nikya/eedomusScript_windDirection\\'>https://github.com/Nikya/eedomusScript_windDirection</a>'"
         },
         {
             "parameter": "configPerifCode",
-            "description": "Renseigner le code API de l'anémomètre",
-            "xtype": "numberfield",
-            "field": "allowBlank: false, allowDecimals:false, width: 100"
+            "description": "Anémomètre",
+            "xtype": "combo",
+            "field": "store : getCombo('/json/list_generic.php?type=sensor'), displayField: 'label', valueField: 'id', typeAhead: true, forceSelection: true, triggerAction: 'all', selectOnFocus: true, editable: false, shadow:true, mode: 'local', width: 250, listWidth: 300, allowBlank: false"
         },
         {
             "parameter": "configDisplay",
-            "description": "<b>Options d'affichages</b> Choisir une langue et une longueur d'affichage parmis : <code>fr/short</code> ou <code>fr/long</code> ou <code>en/short</code> ou <code>en/long</code>",
-            "xtype": "textfield",
-            "field": "allowBlank: false, allowDecimals:false, width: 10"
+            "description": "Options d'affichages",
+            "xtype": "combo",
+            "default_value": "fr/short",
+            "field": "width: 80, allowBlank:false, store:['fr/short', 'fr/long', 'en/short', 'en/long'], editable: false, shadow: true, triggerAction: 'all', typeAhead:true"
         }
     ],
     "scripts": [
