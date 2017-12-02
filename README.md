@@ -1,11 +1,9 @@
 # eedomus script : wind direction
 
-![compass](src\img\windrose-compass.png "Rose des vents")
+<img src="asset/windrose-compass.svg" alt="Nikya Compas" style="max-width: 150px;"/>
 
 * Version : 2.0
-* Origine : [GitHub/Nikya/windDirection][be61b901]
-
-  [be61b901]: https://github.com/Nikya/eedomusScript_windDirection "Origine sur GitHub"
+* Origine : [GitHub/Nikya/windDirection](https://github.com/Nikya/eedomusScript_windDirection "Origine sur GitHub")
 
 
 ## Description
